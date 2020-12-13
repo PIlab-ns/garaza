@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sistem za upravljanje javnim garaznim prostorom</title>
+
+    <!--Kada editujete html/css koristiti direktno linkovanje(***), a potom kopirati u static folder i zakomentarisati direktno linkovanje-->
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js.js') }}"></script>
+
+    <!--Direktno linkovanje (***)-->
+    <!--<link type="text/css" rel="stylesheet" href="JsStyle/style.css" />
+    <script src="JsStyle/jquery.js"></script>
+    <script src="JsStyle/js.js"></script>-->
+
+    <script>
+        var $SCRIPT_ROOT = {{ request.script_root|tojson|safe}};
+    </script>
+</head>
+<body onload="update();">
+    <div class="header">
+        Sistem za upravljanje javnim garaznim prostorom
+        <br>
+    </div>
+
+    <!--<div class = "btn active" id="btn1" style="display: none;"></div>
+    <div class = "btn" id="btn2" style="display: none;"></div>-->
+
+    <div class="sekcija" id="sekcija1">
+        <div class="naslov">Parking mesta</div>
+        <br>
+        <fieldset>
+            <div class="box zz">ZAUZETO</div>
+            <div class="box" id="m1">SLOBODNO</div>  
+            <div class="box zz">ZAUZETO</div>
+            <div class="box" id="m2">SLOBODNO</div>
+            <div class="box zz">ZAUZETO</div>
+            <div class="box" id="m3">SLOBODNO</div>
+            <div class="box zz">ZAUZETO</div>
+            <div class="box" id="m4">SLOBODNO</div>
+        </fieldset>
+    </div>
+    <div class="sekcija" id="sekcija3">
+        <div class="naslov">Rezervacija</div>
+        <div class="form">
+            <form action="/reserve" method="POST" id="form">
+                <fieldset>
+                  <legend id="#mnnv" style="color:white; font-size: 20px;">Forma za rezervaciju parking mesta:</legend>
+                  Email:<br>
+                  <input type="text" name="email" id="re"><br>
+                  <input class="button" id="button5" type="submit" value="Submit">
+                </fieldset>
+              </form> 
+        </div>
+    </div>
+    <div class="sekcija" id="sekcija2"> <!--style="display: none;"-->
+        <div class="naslov">Informacije</div>
+        <div class="bme">
+            <div class="naslov1">Temperatura</div>
+            <br>
+            <p class="xd" id="temp">value</p>
+        </div>
+        <div class="bme">
+            <div class="naslov1">Vlaznost vazduha</div>
+            <br>
+            <p class="xd" id="hum">value</p>
+        </div>
+        <div class="bme">
+            <div class="naslov1">Vazdusni pritisak</div>
+            <br>
+            <p class="xd" id="pres">value</p>
+        </div>
+        <div class="bme" id="g">
+            <div class="naslov1">Opasnost od gasova</div>
+            <br>
+            <p class="xd" id="gas">Nema opasnosti</p>
+        </div>
+    </div>
+    <!--<div class="sekcija" id="sekcija3"> style="display: none;"
+        <div class="naslov">MQ-135</div>
+        <div class="bme">
+            <div class="naslov1">LPG</div>
+            <br>
+            <p class="xd"></p>
+        </div>
+        <div class="bme">
+            <div class="naslov1">CO</div>
+            <br>
+            <p class="xd"></p>
+        </div>
+        <div class="bme">
+            <div class="naslov1">Dim</div>
+            <br>
+            <p class="xd"></p>
+        </div>
+    </div>-->
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div id="we">xddddddd</div>
+</body>
+</html>
